@@ -1,0 +1,23 @@
+### Experiment:
+
+1. Fine-tune GPT-2 model on argsme corpus..
+2. Use pplm model to generate text guided by bag-of-words that represents user's stances on big-issues
+
+
+### Commands:
+
+- Bulding a bow for big-issues using topic signiture: Exists in the big-issues-bows notebook
+
+- Fine tuning gpt model over the args me dataset: Exists in the fine-tune-lm notebook
+
+- Generate predictions:
+
+	python bow_based_claim_generation.py \
+					 --pretrained_model_path path_to_the_fine_tuned_lm/argsme_ft_new \
+                                         --training_dataset_path path_to_training_ds/train_with_claim_df.csv \
+                                         --valid_dataset_path    path_to_test_set/test_with_claim_df.csv \
+                                         --users_df_path         path_to_users/users.pkl \
+                                         --big_issues_bows_path  path_to_big_issues_bows/big_issues_manual_bows.pkl \
+                                         --output_path           output_path/pplm_manual_bi_preds.csv \
+                                         --length 15 \
+                                         --modify_topic
