@@ -22,7 +22,7 @@ class ArgsMeArgumentRetriever():
     STOP_WORDS = set(stopwords.words('english'))
     NLP = spacy.load("en_core_web_sm", disable=[
                      "tagger", "parser", "ner", "textcat", "tokenizer"])
-    NLP.add_pipe(NLP.create_pipe('sentencizer'))
+    NLP.add_pipe("sentencizer")
 
     def __init__(self, keyphrases: bool, aspect_occurances: bool, synset: bool, topic_signatures: bool, 
         argsme_corpus_path: str, sample_size: int, stance: str=None):
