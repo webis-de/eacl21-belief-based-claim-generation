@@ -10,7 +10,7 @@ from nltk.corpus import stopwords, wordnet
 
 import spacy
 
-nlp = spacy.load("en")
+nlp = spacy.load("en_core_web_sm")
 
 ideology_map = {
           'Anarchist': 'left',

@@ -1,11 +1,10 @@
 import sys
-sys.path.insert(0, "/workspace/believe-based-argumentation-generation/src-py/")
+sys.path.insert(0, "../../src-py/")
 
 import os
 import utils
 import pickle
 from run_pplm_discrim_train import *
-from text_to_beliefs import *
 from run_pplm import *
 
 from transformers import GPT2Tokenizer
@@ -14,7 +13,7 @@ from transformers.modeling_gpt2 import GPT2LMHeadModel
 
 import spacy
 
-nlp = spacy.load("en")
+nlp = spacy.load("en_core_web_sm")
 
 
 device = 'cuda:0'
